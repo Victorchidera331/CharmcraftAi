@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07040f">
+  <meta name="description" content="CharmCraft Admin Dashboard">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/admin.css">
+  <title>CharmCraft Admin</title>
+</head>
+<body>
+  <main class="admin-app">
+    <aside class="admin-sidebar">
+      <div class="admin-brand"><span>✨</span><strong>CharmCraft Admin</strong></div>
+      <nav id="adminNav" aria-label="Admin navigation">
+        <button class="active" type="button" data-panel="dashboard">Dashboard</button>
+        <button type="button" data-panel="users">Users</button>
+        <button type="button" data-panel="coach">Coach Victor</button>
+        <button type="button" data-panel="content">Content</button>
+        <button type="button" data-panel="achievements">Achievements</button>
+        <button type="button" data-panel="missions">Missions</button>
+        <button type="button" data-panel="practice">Practice</button>
+        <button type="button" data-panel="insights">Insights</button>
+        <button type="button" data-panel="notifications">Notifications</button>
+        <button type="button" data-panel="analytics">Analytics</button>
+        <button type="button" data-panel="reports">Reports</button>
+        <button type="button" data-panel="revenue">Revenue</button>
+        <button type="button" data-panel="ai">AI Config</button>
+        <button type="button" data-panel="backup">Backup</button>
+        <button type="button" data-panel="logs">Logs</button>
+        <button type="button" data-panel="settings">Settings</button>
+        <button type="button" data-panel="cloud">Cloud Config</button>
+        <button type="button" data-panel="push">Push Notifications</button>
+      </nav>
+      <a class="back-link" href="/">Open Mobile App</a>
+    </aside>
+
+    <section class="admin-main">
+      <header class="admin-header">
+        <div><p>Production Console</p><h1 id="panelTitle">Dashboard</h1></div>
+        <button id="saveAll" type="button">Save changes</button>
+      </header>
+
+      <section id="dashboard" class="admin-panel active">
+        <div class="stats-grid">
+          <article><span>Total Users</span><strong id="statUsers">0</strong></article>
+          <article><span>Premium</span><strong id="statPremium">0</strong></article>
+          <article><span>Revenue</span><strong id="statRevenue">$0</strong></article>
+          <article><span>AI Requests</span><strong id="statAi">0</strong></article>
+        </div>
+        <div class="admin-card"><h2>System Health</h2><div id="healthList" class="pill-list"></div></div>
+      </section>
+
+      <section id="users" class="admin-panel"><div class="admin-card"><h2>Manage users</h2><div id="userList" class="data-list"></div><button id="addUser" type="button">Add test user</button></div></section>
+      <section id="coach" class="admin-panel"><div class="admin-card"><h2>Coach Victor prompt</h2><textarea id="coachPrompt"></textarea><button data-action="savePrompt" type="button">Save prompt</button></div></section>
+      <section id="content" class="admin-panel"><div class="admin-card"><h2>Edit content</h2><textarea id="contentEditor"></textarea><button data-action="saveContent" type="button">Publish content</button></div></section>
+      <section id="achievements" class="admin-panel"><div class="admin-card"><h2>Create achievements</h2><input id="achievementName" placeholder="Achievement name"><button data-action="achievement" type="button">Create achievement</button><div id="achievementList" class="pill-list"></div></div></section>
+      <section id="missions" class="admin-panel"><div class="admin-card"><h2>Create missions</h2><input id="missionName" placeholder="Mission name"><input id="missionXp" type="number" min="1" value="25"><button data-action="mission" type="button">Create mission</button><div id="missionList" class="data-list"></div></div></section>
+      <section id="practice" class="admin-panel"><div class="admin-card"><h2>Practice scenarios</h2><textarea id="practiceScenarios"></textarea><button data-action="practice" type="button">Save scenarios</button></div></section>
+      <section id="insights" class="admin-panel"><div class="admin-card"><h2>Daily insights</h2><textarea id="insightEditor"></textarea><button data-action="insights" type="button">Save insights</button></div></section>
+      <section id="notifications" class="admin-panel"><div class="admin-card"><h2>Send notification</h2><input id="notificationTitle" placeholder="Title"><textarea id="notificationBody" placeholder="Message"></textarea><button data-action="notify" type="button">Queue notification</button><div id="notificationList" class="data-list"></div></div></section>
+      <section id="analytics" class="admin-panel"><div class="admin-card"><h2>Analytics</h2><canvas id="analyticsCanvas" width="760" height="260"></canvas></div></section>
+      <section id="reports" class="admin-panel"><div class="admin-card"><h2>Reports</h2><div id="reportList" class="data-list"></div><button data-action="report" type="button">Generate report</button></div></section>
+      <section id="revenue" class="admin-panel"><div class="admin-card"><h2>Premium revenue</h2><div class="stats-grid"><article><span>Monthly</span><strong>$349</strong></article><article><span>Yearly</span><strong>$1,899</strong></article></div></div></section>
+      <section id="ai" class="admin-panel"><div class="admin-card"><h2>AI Config</h2><label>Tone<select id="aiTone"><option>warm-confident</option><option>playful</option><option>direct</option><option>romantic</option></select></label><label>Safety<input id="aiSafety" value="Respectful, consent-first, supportive"></label><button data-action="ai" type="button">Save AI config</button></div></section>
+      <section id="backup" class="admin-panel"><div class="admin-card"><h2>Backup data</h2><button data-action="backup" type="button">Create backup</button><button data-action="restore" type="button">Restore latest backup</button><textarea id="backupOutput" readonly></textarea></div></section>
+      <section id="logs" class="admin-panel"><div class="admin-card"><h2>Logs</h2><div id="logList" class="data-list"></div></div></section>
+      <section id="settings" class="admin-panel"><div class="admin-card"><h2>Settings</h2><label>Premium enabled<input id="premiumEnabled" type="checkbox" checked></label><label>Maintenance mode<input id="maintenanceMode" type="checkbox"></label><button data-action="settings" type="button">Save settings</button></div></section>
+      <section id="cloud" class="admin-panel"><div class="admin-card"><h2>Cloud Config</h2><input id="cloudEndpoint" placeholder="Cloud sync endpoint" value="local-first"><button data-action="cloud" type="button">Save cloud config</button></div></section>
+      <section id="push" class="admin-panel"><div class="admin-card"><h2>Push Notifications</h2><input id="pushTopic" placeholder="Topic" value="daily-coaching"><button data-action="push" type="button">Save push topic</button></div></section>
+    </section>
+  </main>
+  <div id="toast" class="toast">Admin ready</div>
+  <script src="/admin.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# dependencies
+/node_modules
+
+# Next.js build output
+/.next
+/out
+
+# deployment platform state
+/.vercel
+/.netlify
+
+# local environment secrets
+.env
+.env.local
+.env.*.local
+
+# logs, incremental metadata, and generated archives
+*.log
+*.tsbuildinfo
+*.zip
+
+# local OS files
+.DS_Store

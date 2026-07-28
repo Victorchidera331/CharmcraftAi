@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">CharmCraft icon</title>
+  <defs>
+    <linearGradient id="g" x1="80" y1="40" x2="430" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9d5cff"/>
+      <stop offset="0.52" stop-color="#d65cff"/>
+      <stop offset="1" stop-color="#5cffbd"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="#07040f"/>
+  <path filter="url(#shadow)" fill="url(#g)" d="M256 68c86 0 156 61 156 137 0 53-34 99-84 122l14 83c2 13-12 23-23 16l-83-55c-76-8-136-64-136-132C100 129 170 68 256 68Z"/>
+  <path fill="#fff" d="M186 208c32-42 108-43 140 0 7 9-5 21-15 15-33-20-76-20-109 0-10 6-23-6-16-15Zm38 65c19 15 45 15 64 0 10-8 24 6 15 17-25 31-77 31-102 0-9-11 5-25 23-17Z"/>
+  <path fill="#fff" opacity="0.86" d="m351 126 12 30 31 12-31 12-12 31-12-31-31-12 31-12 12-30Z"/>
+</svg>
